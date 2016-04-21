@@ -1,3 +1,5 @@
+inoremap jk <esc>
+
 " Change some default Vim configs
 " ===============================
 
@@ -9,40 +11,42 @@ filetype on
 filetype plugin on
 filetype indent on
 
-let mapleader = ","         " Set Leader key to comma
-syntax on                   " Turn on syntax highlighting
-set hidden                  " Allow swapping buffers by just hiding them
-set lazyredraw              " Don't update the display while executing macros
-set showmode                " Show current mode
-set nowrap                  " Do not wrap text
-set number                  " Show line numbers
-set relativenumber          " Show relative line numbers
-set hls                     " Highlight searches
-set ic                      " Ignore case
-set smartcase               " Use case when searching with cases
-set incsearch               " Incremental search
-set autoindent smartindent  " set smartindent
-set ruler                   " Always show current position
-set autoread                " Autoread when a file is changed from the outside
-set wildmenu                " Turn on the WiLd menu
-set wildignore=*.o,*~,*.pyc " Ignore compiled files
-set laststatus=2            " Always show status line
-set statusline=%f           " tail of the filename
-set diffopt=filler,iwhite   " In diff mode, ignore whitespace changes
-set directory=~/.vim/tmp    " Use global swap directory
-set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
-set backspace=2             " Enable backspace in insert mode
-set shell=/bin/bash         " Can do with bash shell for vim
-"set shell=/usr/local/bin/zsh         " Let's try using zsh
-set t_ut=                   " Disable background color erase
-set synmaxcol=300           " Don't syn-highlight characters after 300 columns
-set nojoinspaces            " Use only 1 space after "." when joining lines
+:let mapleader = ","         " Set Leader key to comma
+syntax on                    " Turn on syntax highlighting
+set hidden                   " Allow swapping buffers by just hiding them
+set lazyredraw               " Don't update the display while executing macros
+set showmode                 " Show current mode
+set nowrap                   " Do not wrap text
+set number                   " Show line numbers
+set relativenumber           " Show relative line numbers
+set hls                      " Highlight searches
+set ic                       " Ignore case
+set smartcase                " Use case when searching with cases
+set incsearch                " Incremental search
+set autoindent smartindent   " set smartindent
+set ruler                    " Always show current position
+set autoread                 " Autoread when a file is changed from the outside
+set wildmenu                 " Turn on the WiLd menu
+set wildignore=*.o,*~,*.pyc  " Ignore compiled files
+set laststatus=2             " Always show status line
+set statusline=%f            " tail of the filename
+set diffopt=filler,iwhite    " In diff mode, ignore whitespace changes
+set directory=~/.vim/tmp     " Use global swap directory
+set pastetoggle=<F3>         " Toggle paste mode while in insert mode with F12
+set backspace=2              " Enable backspace in insert mode
+set shell=/usr/local/bin/zsh " Can do with bash shell for vim
+set t_ut=                    " Disable background color erase
+set synmaxcol=300            " Don't syn-highlight characters after 300 columns
+set nojoinspaces             " Use only 1 space after                           " . " when joining lines
 
 " Use 2 spaces for tab
 set tabstop=2
 set shiftwidth=2
 set expandtab
 
+let g:nerdtree_tabs_open_on_console_startup = 0
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 " Show symbols for tabs and trailing whitespace
 set list!
 set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
@@ -127,6 +131,8 @@ endif
 nnoremap <C-s> <Esc>:update<CR>
 inoremap <C-s> <c-o>:update<CR>
 nnoremap <Leader>q <Esc>:q<CR>
+nnoremap <Leader>w <Esc>:w<CR>
+nnoremap <Leader>x <Esc>:x<CR>
 
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -153,9 +159,7 @@ nnoremap <Leader>6 :6b<CR>
 nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
-
-" Shows cursor line and column
-command TalkModeToggle  :call TalkModeToggle()
+nnoremap <Leader>bq :bd<CR>
 
 " Copy/Paste to/from clipboard
 vmap <Leader>y "+y
@@ -168,7 +172,7 @@ vmap <Leader>P "+P
 nnoremap <Leader>/ :set hls!<CR>
 
 " Tabularize shortcut
-vnoremap <Leader>t :Tabularize /
+nnoremap <Leader>t :Tabularize /
 
 " Fuzzy search all open buffers
 " using C-/. Yes, C-/ !!!
@@ -209,14 +213,33 @@ iabbr st /^ "([^"]*)"  $/
 
 " This is how I roll
 " ==================
-nnoremap h :echo "You're so two-thousand and late"<cr>
-nnoremap j :echo "You're so two-thousand and late"<cr>
-nnoremap k :echo "You're so two-thousand and late"<cr>
-nnoremap l :echo "You're so two-thousand and late"<cr>
+" nnoremap h :echo 'You\'re so two-thousand and late'<cr>
+" nnoremap j :echo 'You\'re so two-thousand and late'<cr>
+" nnoremap k :echo 'You\'re so two-thousand and late'<cr>"
+" nnoremap l :echo 'You\'re so two-thousand and late'<cr>
 
 " Kashyap's extra bindings for pairing
 "imap jk <Esc>
 "imap kj  <Esc>
-"nnoremap ; :
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<tab>'
+
+"my key binding
+onoremap p i(
+onoremap b /return<cr>
 "set rtp+=$HOME/OpenSource/open-github-commit.vim
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+ let g:VtrUseVtrMaps = 1
