@@ -10,10 +10,10 @@ if defined?(::Bundler)
   end
 end
 # Use Pry everywhere
-require "rubygems"
-require 'pry'
-Pry.start
-exit
+#require "rubygems"
+#require 'pry'
+#Pry.start
+#exit
 
 
 =begin

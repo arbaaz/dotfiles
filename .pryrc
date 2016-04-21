@@ -1,6 +1,8 @@
+require 'hirb'
 # Vim as default editor
 Pry.config.editor = "vim"
 
+Hirb.enable :output => {"ActiveRecord::Base" => {:class => :auto_table, :ancestor => true, :options => {:vertical => true}}}
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level| "pry[#{RUBY_VERSION}] (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
