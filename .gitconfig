@@ -1,6 +1,6 @@
 [user]
-  name = Emil Soman
-  email = emil.soman@gmail.com
+  name = Arbaaz
+  email = abdularbaaz@gmail.com
 [credential]
   helper = cache --timeout=3600
 [color]
@@ -22,11 +22,8 @@
   find = !git ls-tree -r --name-only HEAD | grep --color $1
   masterdiff = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
   diffr  = "!f() { git diff "$1"^.."$1"; }; f"
-[github]
-  user = emilsoman
-  password = password
 [push]
-  default = simple
+  default = current
 [diff]
   noprefix = true
 [mergetool "vimdiff3"]
