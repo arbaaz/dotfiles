@@ -10,7 +10,7 @@
   tool = vimdiff3
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/rbz/.gitignore_global
   attributesfile = ~/.gitattributes
 [alias]
   unstage = reset HEAD
