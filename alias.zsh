@@ -16,16 +16,11 @@ alias vi=vim
 alias gw='grunt watch'
 #reloading dot file
 alias sz='source ~/.zshrc'
+alias speedtest="wget -O /dev/null http://speedtest.che01.softlayer.com/downloads/test100.zip"
 
 # ssh aliases
-alias ssh-flutter-staging-app='ssh -p 999 ubuntu@staging.tinyowl.co.in'
-alias front_ssh='ssh ubuntu@52.74.146.15 -p 13299'
-alias ssh-f-pos='ssh ubuntu@api-f-pos.tinyowl.com'
-alias ssh_prod_write='ssh ubuntu@172.31.98.96 -p 999'
 
-alias ssh-fulfil='ssh ubuntu@54.169.187.80'
 alias ssh-raftaar='ssh -i ~/.aws/raftaar.pem ubuntu@54.68.248.189'
-alias homemade-ssh='ssh ubuntu@54.169.37.248'
 #git aliases
 alias ggpull='git pull upstream $(current_branch)'
 alias gfu='git fetch upstream'
