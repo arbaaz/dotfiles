@@ -6,3 +6,6 @@ Installation
 
 Open VIM and run `:PluginInstall`
 Open iTerm preferences and load preferences from `./iterm2` directory
+
+
+ln -s ~/dotfiles/bin/tat /usr/local/bin/
