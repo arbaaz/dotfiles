@@ -1,0 +1,49 @@
+[
+  {
+    "keys": [
+      "j",
+      "k"
+    ],
+    "command": "exit_insert_mode",
+    "context": [
+      {
+        "key": "setting.command_mode",
+        "operand": false
+      },
+      {
+        "key": "setting.is_widget",
+        "operand": false
+      },
+      {
+        "key": "setting.vintage_ctrl_keys"
+      }
+    ]
+  },
+  {
+    "keys": [
+      "option+`"
+    ],
+    "command": "run_macro_file",
+    "args": {
+      "file": "Packages/User/superBracketizeFunction.sublime-macro"
+    }
+  },
+  {
+    "keys": [
+      "super+;"
+    ],
+    "command": "run_macro_file",
+    "args": {
+      "file": "Packages/User/superEndLineWiSemiColin.sublime-macro"
+    }
+  },
+  {
+    "keys": [
+      "super+,"
+    ],
+    "command": "run_macro_file",
+    "args": {
+      "file": "Packages/User/EndLineCommaNewLine.sublime-macro"
+    }
+  }
+]

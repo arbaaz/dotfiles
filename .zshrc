@@ -152,4 +152,4 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export NVM_DIR="/Users/tinyowl/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use 0.12
+#nvm use 0.12
