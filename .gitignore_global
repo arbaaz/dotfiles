@@ -18,4 +18,6 @@
 /nohup.out
 /mongodb
 /*.dump
+/.idea
+/*.todolist
 .DS_Store

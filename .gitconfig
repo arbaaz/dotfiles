@@ -1,6 +1,6 @@
 [user]
-  name = Arbaaz
-  email = abdularbaaz@gmail.com
+	name = arbaaz
+	email = abdularbaaz@gmail.com
 [credential]
   helper = cache --timeout=3600
 [color]
@@ -30,3 +30,11 @@
   cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [branch]
 	autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/rbz/.stCommitMsg

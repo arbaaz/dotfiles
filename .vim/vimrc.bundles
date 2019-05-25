@@ -13,8 +13,8 @@ Plugin 'ctrlpvim/ctrlp.vim'                  " Fuzzy file finder
 Plugin 'scrooloose/nerdcommenter'            " Comment & uncomment
 
 Plugin 'vim-ruby/vim-ruby'                   " Ruby autocomplete etc
-Plugin 'Valloric/YouCompleteMe'              " Autocompletion
-Plugin 'SirVer/ultisnips'                    " Autocomplete snippets
+"Plugin 'Valloric/YouCompleteMe'              " Autocompletion
+"Plugin 'SirVer/ultisnips'                    " Autocomplete snippets
 Plugin 'honza/vim-snippets'                  " LOADS of snippets
 
 Plugin 'kchmck/vim-coffee-script'            " Coffee filetype
@@ -55,7 +55,7 @@ Plugin 'mtscout6/vim-cjsx'                   " Coffee-JSX syntax highlighting
 Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh
 Plugin 'emilsoman/spec-outline.vim'          " Spec outlines for spec files
 Plugin 'emilsoman/test-runner.vim'           " Test runner shortcuts
-Plugin 'emilsoman/indent-highlight.vim'      " Highlight current block
+"Plugin 'emilsoman/indent-highlight.vim'      " Highlight current block
 Plugin 'emilsoman/my-filetype-overrides.vim' " Filetype specific vimfu
 
 Plugin 'christoomey/vim-tmux-navigator'      " navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
@@ -73,5 +73,6 @@ Plugin 'fatih/vim-go'
 " Stuff for Elixir
 " ================
 Plugin 'elixir-lang/vim-elixir'
-
+"Plugin 'vim-prettier'
+Plugin 'rhysd/vim-crystal'
 filetype on

@@ -64,7 +64,7 @@ endif
 
 "Draw a dark grey ruler at 80 chars
 set colorcolumn=80
-highlight ColorColumn ctermbg=234
+highlight ColorColumn ctermbg=235
 
 " Show line cursor in insert mode
 " and block cursor in normal mode
@@ -173,6 +173,8 @@ nnoremap <Leader>/ :set hls!<CR>
 
 " Tabularize shortcut
 nnoremap <Leader>t :Tabularize /
+nmap <Leader>a: :Tabularize /:\s<CR>
+vmap <Leader>a: :Tabularize /:\s<CR>
 
 " Fuzzy search all open buffers
 " using C-/. Yes, C-/ !!!
@@ -210,7 +212,7 @@ iabbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
 "Cucumber regex abbrs
 iabbr mq "([^"]*)"
 iabbr st /^ "([^"]*)"  $/
-
+iabbr log console.log('$')
 " This is how I roll
 " ==================
 " nnoremap h :echo 'You\'re so two-thousand and late'<cr>
@@ -224,12 +226,18 @@ iabbr st /^ "([^"]*)"  $/
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_files = 0 
+let g:ctrlp_max_depth = 40
+
+let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>eh :vsplit $MYHOST<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,erb EmmetInstall
 let g:user_emmet_leader_key='<tab>'
 
 "my key binding
@@ -242,4 +250,10 @@ autocmd VimResized * :wincmd =
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
- let g:VtrUseVtrMaps = 1
+let g:VtrUseVtrMaps = 1
+"let g:indent_highlight_disabled = 1
+"let g:indent_highlight_bg_color = 245
+set guifont=FiraCode-Light:h14
+nnoremap <leader>. :CtrlPTag<cr>
+map <Enter> o<ESC>
+
