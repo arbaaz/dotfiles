@@ -40,8 +40,7 @@ alias pip_install='pip install -r requirements.txt'
 
 #git aliases
 function gpr(){
-  git push origin $(git_current_branch)
-  git pull-request -b develop
+  git pull-request -p -d -o -c -b develop
 }
 alias ggpull='git pull origin $(current_branch)'
 alias gb_prune='git branch | sed -e "/master/d" | sed -e "/develop/d" | sed "s/^/git branch -D/"  | bash'
@@ -52,9 +51,11 @@ alias gpo='git push origin $(current_branch)'
 alias git='hub'
 alias uncommit='git reset --soft HEAD\^'
 alias unstage='git reset'
+alias git_untrack='git update-index --assume-unchanged'
+alias git_track='git update-index --no-assume-unchanged'
 alias hb='hub browse'
 alias gcom='git checkout master'
-alias ssh_bastion="ssh ubuntu@13.233.214.173"
+alias ssh_bastion="ssh ubuntu@52.50.3.63"
 alias ssh_shaadi_git_server="ssh git@172.31.1.63"
 alias ssh_prod_bastion="ssh ubuntu@13.126.186.178"
 alias ssh_testnet="ssh -i ~/.ssh/cdex-mumbai-development.pem -o ProxyCommand='ssh -W %h:%p ubuntu@13.232.76.240' ubuntu@172.31.2.19"
@@ -67,9 +68,3 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias popcorn_downloads='/var/folders/bj/p26t6lfd483bfq085872jnmc0000gp/T/Butter'
 alias ctags="`brew --prefix`/bin/ctags"
 
-
-alias ww4_sandbox="ssh -i /Users/rbz/workspace/shaadi/sandbox-automation/staging-mumbai.pem ec2-user@172.31.1.97 -t \"sudo su\""
-alias ww4_access_logs="ssh -i /Users/rbz/workspace/shaadi/sandbox-automation/staging-mumbai.pem ec2-user@172.31.1.97 -t \"tail -f /var/log/nginx/access.log\""
-alias ww4_logs="ssh -i /Users/rbz/workspace/shaadi/sandbox-automation/staging-mumbai.pem ec2-user@172.31.1.97 -t \"tail -f /var/www/shaadiapi/supervisor.log\""
-alias back1_sandbox="ssh -i /Users/rbz/workspace/shaadi/sandbox-automation/staging-mumbai.pem ec2-user@172.31.1.114 -t \"sudo su\""
-alias back1_access_logs="ssh -i /Users/rbz/workspace/shaadi/sandbox-automation/staging-mumbai.pem ec2-user@172.31.1.114 -t \"sudo tail -f /var/log/nginx/access.log\""
