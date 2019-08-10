@@ -34,7 +34,7 @@ set diffopt=filler,iwhite    " In diff mode, ignore whitespace changes
 set directory=~/.vim/tmp     " Use global swap directory
 set pastetoggle=<F3>         " Toggle paste mode while in insert mode with F12
 set backspace=2              " Enable backspace in insert mode
-set shell=/usr/local/bin/zsh " Can do with bash shell for vim
+set shell=/bin/zsh " Can do with bash shell for vim
 set t_ut=                    " Disable background color erase
 set synmaxcol=300            " Don't syn-highlight characters after 300 columns
 set nojoinspaces             " Use only 1 space after                           " . " when joining lines
@@ -96,11 +96,6 @@ set timeoutlen=1000 ttimeoutlen=0
 " Turn on spellcheck in markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
 
-" Plugin config overrides
-" =======================
-if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
-  source ~/.vim/vimrc.plugin_overrides
-endif
 
 " Load plugins
 " ============
@@ -108,6 +103,11 @@ if filereadable(expand("~/.vim/vimrc.bundles"))
   source ~/.vim/vimrc.bundles
 endif
 
+" Plugin config overrides
+" =======================
+if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
+  source ~/.vim/vimrc.plugin_overrides
+endif
 
 " Colors
 " ======
