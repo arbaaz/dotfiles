@@ -9,7 +9,7 @@
   conflictstyle = diff3
   tool = vimdiff3
 [core]
-  editor = vim
+  editor = emacs
 	excludesfile = /Users/rbz/.gitignore_global
   attributesfile = ~/.gitattributes
 [alias]
@@ -37,4 +37,4 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/rbz/.stCommitMsg
+	;template = /Users/rbz/.stCommitMsg
